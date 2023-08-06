@@ -1,0 +1,84 @@
+/* Reset some default styles to ensure consistency */
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  list-style: none;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.images {
+  /* overflow: hidden; */
+  box-shadow: 0px 0px 10px rgb(95, 89, 89);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.images__slider {
+  height: 600px;
+
+  position: relative;
+}
+
+.slide {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  flex: 0 0 100%;
+  transition: transform 0.9s ease-in-out;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+}
+
+.images__slider--control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.images__slider--control__left,
+.images__slider--control__right {
+  cursor: pointer;
+}
+
+.icon {
+  width: 40px;
+  overflow: hidden;
+}
+
+.images__nav-bar {
+  display: flex;
+  justify-content: center;
+  transition: transform 0.9s ease-in-out;
+}
+
+.nav-bar__btn {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: lightgray;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.nav-bar__btn.active {
+  background-color: black;
+}
