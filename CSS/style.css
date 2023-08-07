@@ -39,7 +39,7 @@ li {
   overflow: hidden;
   position: absolute;
   flex: 0 0 100%;
-  /* transition: transform 0.9s ease-in-out; */
+  transition: transform 0.8s ease-in;
 }
 
 .slide img {
@@ -90,7 +90,7 @@ li {
 .images__text-indicator {
   position: absolute;
   top: 45%;
-  left: 46%;
+  left: 38%;
   padding: 10px;
   color: white;
   background-color: rgba(40, 39, 39, 0.422);

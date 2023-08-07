@@ -7,6 +7,8 @@ let slideCurrentIndex = 0;
 let autoSlideInternal;
 const textIndicator = document.querySelector(".images__text-indicator");
 
+let forwardCheck = true;
+
 // Changing the position of image from left
 slides.forEach((slide, index) => {
   slide.style.left = `${index * 100}%`;
@@ -29,6 +31,11 @@ const nextSlide = () => {
   slideImage();
 };
 
+// toggleFunction
+const toggleFunction = () => {
+  forwardCheck = !forwardCheck;
+};
+
 // Function that shows previous image
 const previousSlide = () => {
   if (slideCurrentIndex <= 0) {
@@ -42,7 +49,17 @@ const previousSlide = () => {
 // Auto slide
 const autoSlide = () => {
   autoSlideInternal = setInterval(() => {
-    nextSlide();
+    if (forwardCheck) {
+      slideCurrentIndex++;
+    } else {
+      slideCurrentIndex--;
+    }
+    if (slideCurrentIndex >= slides.length - 1) {
+      forwardCheck = false;
+    } else if (slideCurrentIndex <= 0) {
+      forwardCheck = true;
+    }
+    slideImage();
     updateNavButtons();
   }, 3000);
 };
