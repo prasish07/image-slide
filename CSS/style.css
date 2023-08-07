@@ -39,7 +39,7 @@ li {
   overflow: hidden;
   position: absolute;
   flex: 0 0 100%;
-  transition: transform 0.9s ease-in-out;
+  /* transition: transform 0.9s ease-in-out; */
 }
 
 .slide img {
@@ -67,7 +67,7 @@ li {
 .images__nav-bar {
   display: flex;
   justify-content: center;
-  transition: transform 0.9s ease-in-out;
+  /* transition: transform 0.9s ease-in-out; */
 }
 
 .nav-bar__btn {
@@ -81,4 +81,19 @@ li {
 
 .nav-bar__btn.active {
   background-color: black;
+}
+
+/* .images:hover {
+  opacity: 0.9;
+} */
+
+.images__text-indicator {
+  position: absolute;
+  top: 45%;
+  left: 46%;
+  padding: 10px;
+  color: white;
+  background-color: rgba(40, 39, 39, 0.422);
+  border-radius: 20px;
+  display: none;
 }

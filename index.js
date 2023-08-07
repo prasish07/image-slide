@@ -5,6 +5,7 @@ const sliderContainer = document.getElementById("slider-container");
 const navButtons = document.querySelectorAll(".nav-bar__btn");
 let slideCurrentIndex = 0;
 let autoSlideInternal;
+const textIndicator = document.querySelector(".images__text-indicator");
 
 // Changing the position of image from left
 slides.forEach((slide, index) => {
@@ -77,8 +78,14 @@ leftButton.addEventListener("click", () => {
 autoSlide();
 
 //  Adding event went the mouse hover to container
-sliderContainer.addEventListener("mouseover", stopAutoSlide);
-sliderContainer.addEventListener("mouseout", autoSlide);
+sliderContainer.addEventListener("mouseover", () => {
+  stopAutoSlide();
+  textIndicator.style.display = "block";
+});
+sliderContainer.addEventListener("mouseout", () => {
+  autoSlide();
+  textIndicator.style.display = "none";
+});
 
 // Changing the image with nav-bar buttons
 navButtons.forEach((button, index) => {
@@ -86,5 +93,6 @@ navButtons.forEach((button, index) => {
     slideCurrentIndex = index;
     slideImage();
     updateNavButtons();
+    stopAutoSlide();
   });
 });
